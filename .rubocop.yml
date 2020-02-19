@@ -90,6 +90,15 @@ Style/ColonMethodCall:
   StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#double-colons'
   Enabled: true
 
+Style/HashEachMethods:
+  Enabled: true
+
+Style/HashTransformKeys:
+  Enabled: true
+
+Style/HashTransformValues:
+  Enabled: true
+
 Style/CommentAnnotation:
   Description: >-
                  Checks formatting of special comments

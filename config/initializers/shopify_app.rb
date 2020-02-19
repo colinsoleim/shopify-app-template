@@ -1,23 +1,14 @@
-Rails.application.config.to_prepare do
-  ShopifyApp.configure do |config|
-    config.application_name = "MetafieldMatch"
-    config.api_key = ENV["SHOPIFY_API_KEY"]
-    config.secret = ENV["SHOPIFY_SECRET"]
-    config.scope = "read_products,write_products"
+# Consult this page for more scope options:
+# https://help.shopify.com/en/api/getting-started/authentication/oauth/scopes
 
-    config.session_repository = Shop
-    config.embedded_app = true
-    config.after_authenticate_job = false
-
-    config.api_version = "2019-04"
-
-    # topics = Rails.application.credentials.shopify_app[:webhook_topics]
-    # config.webhooks = topics.each_with_object([]) do |topic, acc|
-    #   acc << {
-    #     topic: topic,
-    #     format: "json",
-    #     address: "#{ENV["HOST"]}/webhooks/#{topic.parameterize(separator: "_")}"
-    #   }
-    # end
-  end
+ShopifyApp.configure do |config|
+  config.application_name = "My Shopify App"
+  config.api_key = ENV["SHOPIFY_API_KEY"]
+  config.secret = ENV["SHOPIFY_API_SECRET"]
+  config.old_secret = ""
+  config.scope = "read_products"
+  config.embedded_app = false
+  config.after_authenticate_job = false
+  config.api_version = "2019-04"
+  config.session_repository = "Shop"
 end

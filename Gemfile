@@ -6,7 +6,7 @@ git_source(:github) do |repo_name|
 end
 
 ruby "2.6.4"
-gem "rails", "~> 6.0.2.1"
+gem "rails", "~> 5.2"
 
 gem "active_link_to"
 gem "bootsnap", ">= 1.1.0", require: false  # Reduces boot times through caching; required in config/boot.rb
@@ -21,7 +21,7 @@ gem "puma", "~> 3.12"                       # Web Server
 gem "redis", "~> 4.0"                       # Database used for background jobs
 gem "sassc-rails"                           # Frontend
 gem "sentry-raven"                          # Error Monitoring
-gem "shopify_app", "12.0.2"                 # Shopify
+gem "shopify_app", "~> 12.0.2"              # Shopify app
 gem "sidekiq"                               # Backround processing
 gem "sidekiq-rate-limiter"                  # Backround processing
 gem "uglifier", ">= 1.3.0"                  # Frontend
@@ -29,7 +29,6 @@ gem "uglifier", ">= 1.3.0"                  # Frontend
 group :development, :test do
   gem "bullet"
   gem "dotenv-rails"                          # Load environment variables from .env into ENV in development.
-  gem "fake_shopify"                          # Adds shopify fixtures for testing
   gem "pry"                                   # Console Improvements
   gem "rb-readline"                           # Error Logging
   gem "rubocop"                               # Style Monitoring
@@ -49,6 +48,7 @@ group :test do
   gem "capybara", ">= 2.15", "< 4.0", require: false
   gem "database_cleaner"                                  # DB resets between tests
   gem "factory_bot_rails"
+  gem "fake_shopify"                                      # Adds shopify fixtures for testing
   gem "launchy"                                           # Easier launch commands
   gem "rails-controller-testing"                          # Rails controller testing
   gem "rspec-rails", "~> 3.6"

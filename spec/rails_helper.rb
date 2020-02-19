@@ -15,15 +15,14 @@ if Rails.env.production?
 end
 
 require "rspec/rails"
-# require "webmock/rspec"
 Dir[Rails.root.join("spec/support/**/*.rb")].sort.each { |f| require f }
 
 ActiveRecord::Migration.maintain_test_schema!
 
 RSpec.configure do |config|
   config.include FactoryBot::Syntax::Methods
-  # config.fixture_path = "#{::Rails.root}/spec/fixtures"
-  # config.use_transactional_fixtures = false
+  config.fixture_path = "#{::Rails.root}/spec/fixtures"
+  config.use_transactional_fixtures = false
   config.infer_spec_type_from_file_location!
   config.filter_rails_from_backtrace!
 end
