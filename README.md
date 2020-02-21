@@ -1,24 +1,28 @@
-# README
+# Shopify App Template
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a template repository to build shopify apps for the Shopify App Store.
 
-Things you may want to cover:
+## How to install?
 
-* Ruby version
+1. Create a new repo from the template
+2. Git clone the new repo
+3. Replace `shopify-app-template`, `shopify_app_template` and `ShopifyAppTemplate` with your new project's name
+2. `bundle install`
+3. `bundle exec rails db:create db:migrate`
+4. Install and run [Redis](https://redis.io/download)
+5. Install [ngrok](https://ngrok.com/)
+6. `~/ngrok http 3000`
+7. `rails s`
+8. If installation was successful, going to `http://localhost:3000` should give you the Shopify installation window.
 
-* System dependencies
+## Contributing
 
-* Configuration
+Bug reports and pull requests are welcome on GitHub. This project is
+intended to be a safe, welcoming space for collaboration, and contributors are
+expected to adhere to the
+[Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
-* Database creation
+## License
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+The gem is available as open source under the terms of the
+[MIT License](https://opensource.org/licenses/MIT).

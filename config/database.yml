@@ -16,9 +16,9 @@ development:
   adapter:  postgresql
   host:     localhost
   encoding: unicode
-  database: uptime-monitor_development
+  database: shopify-app-template_development
   pool:     5
-  username: uptime-monitor
+  username: shopify-app-template
   password:
   template: template0
 
@@ -44,9 +44,9 @@ test:
   adapter:  postgresql
   host:     localhost
   encoding: unicode
-  database: uptime-monitor_test
+  database: shopify-app-template_test
   pool:     5
-  username: uptime-monitor
+  username: shopify-app-template
   password:
   template: template0
 
@@ -54,8 +54,8 @@ production:
   adapter:  postgresql
   host:     localhost
   encoding: unicode
-  database: uptime-monitor_production
+  database: shopify-app-template_production
   pool:     5
-  username: uptime-monitor
+  username: shopify-app-template
   password:
   template: template0

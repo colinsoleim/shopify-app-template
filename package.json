@@ -1,5 +1,5 @@
 {
-  "name": "uptime-monitor",
+  "name": "shopify-app-template",
   "private": true,
   "dependencies": {
     "jquery": "^3.4.1"
