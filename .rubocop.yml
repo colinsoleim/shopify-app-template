@@ -41,6 +41,10 @@ Style/Attr:
   StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#attr'
   Enabled: true
 
+Style/BlockDelimiters:
+  Exclude:
+    - 'spec/**/*'
+
 Style/SymbolArray:
   Enabled: false
 

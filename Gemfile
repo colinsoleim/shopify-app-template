@@ -58,6 +58,7 @@ group :test do
   gem "timecop"                                           # Improve control of time in tests
   gem "vcr"                                               # Record http requests for more reliable testing
   gem "webdrivers", require: false
+  gem "webmock"                                           # Test HTTP requests
 end
 
 group :production, :development do

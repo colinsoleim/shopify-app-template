@@ -388,7 +388,6 @@ DEPENDENCIES
   mini_magick (~> 4.9)
   mixpanel-ruby
   newrelic_rpm
-  omniauth-shopify-oauth2
   pg
   pry
   puma (~> 3.12)
@@ -416,6 +415,7 @@ DEPENDENCIES
   vcr
   web-console (>= 3.3.0)
   webdrivers
+  webmock
 
 RUBY VERSION
    ruby 2.6.4p104

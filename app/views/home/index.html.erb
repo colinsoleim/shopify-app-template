@@ -1,21 +1,73 @@
-<h2>Products</h2>
+<section>
+  <article>
+    <div class="alert columns twelve">
+      <dl>
+        <dt>Create Your First Alert</dt>
+        <dd>You haven't run any syncs yet, click here to start syncing your shops.</dd>
+      </dl>
+      <%= link_to "Create Something", root_path, class: "button" %>
+    </div>
+  </article>
+</section>
 
-<ul>
-  <% @products.each do |product| %>
-    <li><%= link_to product.title, "https://#{@shop_session.domain}/admin/products/#{product.id}", target: "_top" %></li>
-  <% end %>
-</ul>
+<h1 class="title">Your Products</h1>
+<br/>
+<section>
+  <article>
+    <div class="card">
+      <div class="overflow-container">
+        <table class="results">
+          <thead>
+            <tr>
+              <th>Exported From</th>
+              <th>Imported To</th>
+              <th>Started At</th>
+              <th>Finished At</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @products.each do |product| %>
+              <tr>
+                <td><%= product.title %></td>
+                <td><%= product.variants.count %></td>
+                <td><%= product.body_html.truncate(50) %></td>
+                <td><%= product.created_at %></td>
+                <td><span class="tag green"><%= "Published" %></span></td>
+                <td><%= link_to "View Product", root_path, class: "button secondary" %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </article>
+</section>
+<section>
+  <div class="column">
+    <article>
+      <div class="card columns four">
+        <h5>Add Something</h5>
 
-<hr>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
 
-<h2>Webhooks</h2>
+        <p><%= link_to "Add Something", root_path, class: "button" %></p>
+      </div>
+      <div class="card columns four">
+        <h5>Setup Something</h5>
 
-<% if @webhooks.present? %>
-  <ul>
-    <% @webhooks.each do |webhook| %>
-      <li><%= webhook.topic %> : <%= webhook.address %></li>
-    <% end %>
-  </ul>
-<% else %>
-  <p>This app has not created any webhooks for this Shop. Add webhooks to your ShopifyApp initializer if you need webhooks</p>
-<% end %>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+
+        <p><%= link_to "Setup Something", root_path, class: "button" %></p>
+      </div>
+      <div class="card columns four">
+        <h5>Update Something</h5>
+
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+
+        <p><%= link_to "Update Something", root_path, class: "button" %></p>
+      </div>
+    </article>
+  </div>
+</section>
