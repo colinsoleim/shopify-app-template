@@ -1,7 +1,5 @@
 require "rails_helper"
-require "sidekiq/testing"
 require "sidekiq/api"
-Sidekiq::Testing.fake!
 
 describe ShopifyThrottledWorker, type: :job do
   describe "#throttled?" do
@@ -21,7 +19,7 @@ describe ShopifyThrottledWorker, type: :job do
                 ),
               )
             end
-          }.to change(Sidekiq::Queue.new, :size).by(10)
+          }.to change(Sidekiq::Queue.new(:shopify), :size).by(10)
         end
       end
     end

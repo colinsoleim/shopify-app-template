@@ -18,7 +18,7 @@ development:
   encoding: unicode
   database: shopify-app-template_development
   pool:     5
-  username: shopify-app-template
+  username: uptime-monitor
   password:
   template: template0
 
@@ -46,7 +46,7 @@ test:
   encoding: unicode
   database: shopify-app-template_test
   pool:     5
-  username: shopify-app-template
+  username: uptime-monitor
   password:
   template: template0
 
@@ -56,6 +56,6 @@ production:
   encoding: unicode
   database: shopify-app-template_production
   pool:     5
-  username: shopify-app-template
+  username: uptime-monitor
   password:
   template: template0

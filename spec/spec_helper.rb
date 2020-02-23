@@ -1,5 +1,7 @@
 require 'webmock/rspec'
 include WebMock::API
+require 'sidekiq/testing'
+require 'rspec-sidekiq'
 
 RSpec.configure do |config|
   config.expect_with :rspec do |expectations|

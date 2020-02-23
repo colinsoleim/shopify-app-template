@@ -23,7 +23,7 @@ gem "sassc-rails"                           # Frontend
 gem "sentry-raven"                          # Error Monitoring
 gem "shopify_app", "~> 12.0.2"              # Shopify app
 gem "sidekiq"                               # Backround processing
-gem "sidekiq-rate-limiter"                  # Backround processing
+gem "sidekiq-rate-limiter", git: "https://github.com/enova/sidekiq-rate-limiter.git"
 gem "uglifier", ">= 1.3.0"                  # Frontend
 
 group :development, :test do
