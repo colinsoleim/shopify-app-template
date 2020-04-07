@@ -5,12 +5,12 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-ruby "2.6.4"
-gem "rails", "~> 5.2"
+ruby "2.6.5"
+gem "rails", "~> 6.0.2"
 
 gem "active_link_to"
 gem "bootsnap", ">= 1.1.0", require: false  # Reduces boot times through caching; required in config/boot.rb
-gem "celluloid"                             # Requirement of sidekiq-rate-limiter gem
+gem "draper"                                # Easy decorator setup
 gem "jbuilder", "~> 2.5"                    # JSON support
 gem "jquery-rails"                          # Jquery support
 gem "kaminari"                              # Pagination
@@ -31,6 +31,7 @@ group :development, :test do
   gem "dotenv-rails"                          # Load environment variables from .env into ENV in development.
   gem "pry"                                   # Console Improvements
   gem "rb-readline"                           # Error Logging
+  gem "rspec-rails", "~> 3.6"                 # Testing framework
   gem "rubocop"                               # Style Monitoring
   gem "rubocop-performance"                   # Performance Monitoring
   gem "rubocop-rails"                         # Rails Style Monitoring
@@ -38,10 +39,12 @@ end
 
 group :development do
   gem "awesome_print"
+  gem "better_errors"
+  gem "binding_of_caller"
   gem "listen"
+  gem "prettier"
   gem "spring"
   gem "spring-watcher-listen", "~> 2.0.0"
-  gem "web-console", ">= 3.3.0"
 end
 
 group :test do
@@ -51,9 +54,9 @@ group :test do
   gem "fake_shopify"                                      # Adds shopify fixtures for testing
   gem "launchy"                                           # Easier launch commands
   gem "rails-controller-testing"                          # Rails controller testing
-  gem "rspec-rails", "~> 3.6"
   gem "rspec-sidekiq"
   gem "selenium-webdriver", require: false
+  gem "shoulda-matchers"                                  # Simple one-liner tests for common Rails functionality
   gem "simplecov", require: false                         # Test coverage
   gem "timecop"                                           # Improve control of time in tests
   gem "vcr"                                               # Record http requests for more reliable testing
