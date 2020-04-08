@@ -1,5 +1,5 @@
 class Shop < ApplicationRecord
-  include ShopifyApp::SessionStorage
+  include ShopifyApp::ShopSessionStorage
 
   def api_version
     ShopifyApp.configuration.api_version

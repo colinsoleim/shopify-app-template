@@ -1,10 +1,10 @@
 # An example of usage
-# ShopifyThrottledWorker.perform_async(
+# ShopifyPlusThrottledWorker.perform_async(
 #   service: "ServiceClass",
 #   args: MultiJson.dump(shop_id: shop.id, product_title: "Title")
 # )
 
-class ShopifyThrottledWorker
+class ShopifyPlusThrottledJob
   include Sidekiq::Worker
 
   EXCEPTIONS = [
@@ -12,10 +12,10 @@ class ShopifyThrottledWorker
     ActiveResource::ForbiddenAccess,
   ].freeze
 
-  sidekiq_options queue: :shopify,
+  sidekiq_options queue: :shopify_plus,
                   rate: {
-                    name: "shopify_standard_rate_limit",
-                    limit: 2,
+                    name: "shopify_plus_rate_limit",
+                    limit: 4,
                     period: 1,
                   }
 

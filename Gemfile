@@ -21,7 +21,7 @@ gem "puma", "~> 3.12"                       # Web Server
 gem "redis", "~> 4.0"                       # Database used for background jobs
 gem "sassc-rails"                           # Frontend
 gem "sentry-raven"                          # Error Monitoring
-gem "shopify_app", "~> 12.0.2"              # Shopify app
+gem "shopify_app", git: "https://github.com/Shopify/shopify_app.git" # Shopify app
 gem "sidekiq"                               # Backround processing
 gem "sidekiq-rate-limiter", git: "https://github.com/enova/sidekiq-rate-limiter.git"
 gem "uglifier", ">= 1.3.0"                  # Frontend

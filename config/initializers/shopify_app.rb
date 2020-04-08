@@ -9,7 +9,7 @@ ShopifyApp.configure do |config|
   config.embedded_app = false
   config.after_authenticate_job = false
   config.api_version = "2019-04"
-  config.session_repository = "Shop"
+  config.shop_session_repository = "Shop"
 
   config.scope = ""
 

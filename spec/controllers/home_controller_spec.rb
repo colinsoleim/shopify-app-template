@@ -8,7 +8,8 @@ describe HomeController do
       @shop = create(:shop)
       @shop.activate_shopify_session
 
-      @request.session[:shopify] = @shop.id
+      # @request.session[:shopify] = @shop.id
+      @request.session[:shop_id] = @shop.id
       @request.session[:shopify_domain] = @shop.shopify_domain
     end
 
