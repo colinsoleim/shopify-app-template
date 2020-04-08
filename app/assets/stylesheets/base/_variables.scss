@@ -1,0 +1,35 @@
+// Colors
+$green: #049b4a;
+$blue: #1190D9;
+$brown: #5c4a33;
+$red: #000;
+$yellow: #f3e86b;
+$light-yellow: #fff5c2;
+$melon: #f8bcba;
+$white: #fff;
+$black: #000;
+$light-gray: #ccc;
+$dark-gray: #666;
+
+// Colors in action
+$transparent-green: rgba(103, 188, 120, 0.7);
+$transparent-red: hsla(0, 0, 0, 0.07);
+
+// Font weights
+$sans-serif-semibold: 600;
+
+// Font sizes
+$font-size-smallest: 0.75rem;
+$font-size-small: 0.96rem;
+
+// Line height
+$base-line-height: 1em;
+$medium-line-height: $base-line-height * 1.5;
+
+// Borders
+$base-border-color-1: #dcdcdc;
+$base-border-color-blue: #e9f2fd;
+$light-gray-border: #ccc;
+
+// Animations
+$fast-transition: all 0.15s ease-in-out;
