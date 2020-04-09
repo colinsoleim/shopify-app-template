@@ -1,6 +1,7 @@
 GIT
   remote: https://github.com/Shopify/shopify_app.git
-  revision: 194c6b4d379a96e3c8d39ead771b56e020a140c1
+  revision: 703f0ad0baf593687cbf3d16dbcdd9b1882d80d4
+  ref: 703f0ad
   specs:
     shopify_app (13.0.0)
       browser_sniffer (~> 1.2.0)
@@ -12,6 +13,7 @@ GIT
 GIT
   remote: https://github.com/enova/sidekiq-rate-limiter.git
   revision: 3e8bc81782a448b5f731a5559812bbc580ee74ea
+  ref: 3e8bc81
   specs:
     sidekiq-rate-limiter (0.1.3)
       redis_rate_limiter
