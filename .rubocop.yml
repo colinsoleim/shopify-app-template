@@ -449,7 +449,7 @@ Layout/ParameterAlignment:
   Enabled: true
 
 Layout/ArgumentAlignment:
-  Exclude: 
+  Exclude:
     - 'config/initializers/*'
 
 
@@ -645,6 +645,9 @@ Performance/StringReplacement:
                   you are deleting characters.
   Reference: 'https://github.com/JuanitoFatas/fast-ruby#stringgsub-vs-stringtr-code'
   Enabled: true
+
+Bundler/OrderedGems:
+  Enabled: false
 
 # Rails
 
