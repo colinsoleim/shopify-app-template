@@ -1,30 +1,7 @@
 require "rails_helper"
 require "sidekiq/api"
 
-describe ShopifyThrottledWorker, type: :job do
-  describe "#throttled?" do
-    context "when limit exceeded" do
-      it "should be throttled" do
-        Sidekiq::Testing.disable! do
-          shop = create(:shop)
-          shop.activate_shopify_session
-
-          expect {
-            10.times do
-              ShopifyThrottledWorker.perform_async(
-                service: "ProductBuilder",
-                args: MultiJson.dump(
-                  shop_id: shop.id,
-                  product_title: "New Product",
-                ),
-              )
-            end
-          }.to change(Sidekiq::Queue.new(:shopify), :size).by(10)
-        end
-      end
-    end
-  end
-
+describe ShopifyPlusThrottledJob, type: :job do
   describe "#perform_async" do
     context "for a valid service class and shop" do
       before(:each) do
@@ -38,7 +15,7 @@ describe ShopifyThrottledWorker, type: :job do
             to receive(:call).
             with(shop_id: @shop.id, product_title: "Product Title")
 
-          ShopifyThrottledWorker.perform_async(
+          ShopifyPlusThrottledJob.perform_async(
             service: "ProductBuilder",
             args: MultiJson.dump(
               shop_id: @shop.id,
@@ -55,7 +32,7 @@ describe ShopifyThrottledWorker, type: :job do
       it "should return a NoMethodError" do
         Sidekiq::Testing.inline! do
           expected = expect do
-            ShopifyThrottledWorker.perform_async(
+            ShopifyPlusThrottledJob.perform_async(
               service: "InvalidService",
               args: MultiJson.dump(shop_id: 0),
             )

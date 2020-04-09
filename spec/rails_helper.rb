@@ -3,6 +3,7 @@ SimpleCov.start do
   add_filter "/config/initializers/"
   add_filter "/db/"
   add_filter "/spec/"
+  track_files "{app,lib}/**/*.rb"
 end
 
 require "spec_helper"
@@ -25,4 +26,11 @@ RSpec.configure do |config|
   config.use_transactional_fixtures = false
   config.infer_spec_type_from_file_location!
   config.filter_rails_from_backtrace!
+end
+
+Shoulda::Matchers.configure do |config|
+  config.integrate do |with|
+    with.test_framework :rspec
+    with.library :rails
+  end
 end
