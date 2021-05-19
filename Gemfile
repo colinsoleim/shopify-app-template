@@ -17,7 +17,7 @@ gem "kaminari" # Pagination
 gem "mini_magick", "~> 4.9" # Use ActiveStorage variant
 gem "mixpanel-ruby" # Monitoring
 gem "newrelic_rpm" # Performance Monitoring
-gem "puma", "~> 3.12" # Web Server
+gem "puma", "~> 4.3" # Web Server
 gem "redis", "~> 4.0" # Database used for background jobs
 gem "sassc-rails" # Frontend
 gem "sentry-raven" # Error Monitoring
